@@ -7,7 +7,7 @@ import { transitionAnimation } from './cat-container.animations';
 @Component({
   selector: 'app-cats-container',
   templateUrl: './cats-container.component.html',
-  styleUrls: ['./cats-container.component.css'],
+  styleUrls: ['./cats-container.component.scss'],
   animations: [transitionAnimation()]
 })
 export class CatsContainerComponent implements OnInit {

@@ -4,8 +4,7 @@ import { Cat } from '../cat/cat';
 
 @Component({
   selector: 'app-cat-group',
-  templateUrl: './cat-group.component.html',
-  styleUrls: ['./cat-group.component.css']
+  templateUrl: './cat-group.component.html'
 })
 export class CatGroupComponent {
     @Input()
@@ -13,4 +12,7 @@ export class CatGroupComponent {
 
     @Input()
     cats: Array<Cat>;
+
+    @Input()
+    headerClass = 'blue-heading';
 }

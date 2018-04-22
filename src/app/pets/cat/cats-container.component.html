@@ -2,13 +2,15 @@
     [@transitionStatus]="maleTransitionStatus"
     (@transitionStatus.done)="animateFemaleGroup()">
     <app-cat-group 
-        title="Cats for Male Owners" 
+        title="Cats for Male Owners"
+        headerClass="blue-heading" 
         [cats]="maleCats"></app-cat-group>
 </div>
 
 <div [@transitionStatus]="femaleTransitionStatus">
     <app-cat-group 
         title="Cats for Female Owners"
+        headerClass="pink-heading"
         [cats]="femaleCats"></app-cat-group>
 </div>
 
