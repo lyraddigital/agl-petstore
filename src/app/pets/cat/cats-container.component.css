@@ -1,0 +1,7 @@
+#cats-container-error {
+    padding: 25px;
+    text-align: center;
+    border: 3px dashed red;
+    color: red;
+    font-weight: bold;
+}

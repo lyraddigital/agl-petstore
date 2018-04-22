@@ -1,0 +1,13 @@
+<mat-expansion-panel *ngIf="cats">
+    <mat-expansion-panel-header color="primary">
+        <mat-panel-title>
+            {{title}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+        <div *ngFor="let cat of cats">
+            <mat-list-item> {{cat.Name}} </mat-list-item>
+            <mat-divider></mat-divider>
+        </div>
+    </mat-list>
+</mat-expansion-panel>

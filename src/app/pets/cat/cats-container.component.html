@@ -1,0 +1,15 @@
+<div 
+    [@transitionStatus]="maleTransitionStatus"
+    (@transitionStatus.done)="animateFemaleGroup()">
+    <app-cat-group 
+        title="Cats for Male Owners" 
+        [cats]="maleCats"></app-cat-group>
+</div>
+
+<div [@transitionStatus]="femaleTransitionStatus">
+    <app-cat-group 
+        title="Cats for Female Owners"
+        [cats]="femaleCats"></app-cat-group>
+</div>
+
+<div id="cats-container-error" *ngIf="errorMessage">{{errorMessage}}</div>
