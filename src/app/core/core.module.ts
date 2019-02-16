@@ -1,24 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { PageLoaderService } from './controls/loader/page-loader.service';
-import { LoaderInterceptor } from './http/loader-interceptor';
-import { PageLoaderComponent } from './controls/loader/page-loader.component';
+import { PeopleApiService } from './api/people-api.service';
+import { PageLoaderService } from './page-loader/page-loader.service';
+import { PageLoaderInterceptorService } from './page-loader/page-loader-interceptor.service';
 
 @NgModule({
-  declarations: [ PageLoaderComponent ],
-  imports: [
-    CommonModule,
-    MatProgressSpinnerModule
-  ],
-  exports: [
-    PageLoaderComponent
-  ],
   providers: [
+    PeopleApiService,
     PageLoaderService,
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: PageLoaderInterceptorService, multi: true }
   ]
 })
 export class CoreModule { }
