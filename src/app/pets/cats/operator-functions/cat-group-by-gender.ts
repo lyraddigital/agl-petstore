@@ -7,7 +7,7 @@ import { CatGroup } from '../models/cat-group';
 import { Cat } from '../models/cat';
 import { CatGroupByOwnerGenderResult } from '../models/cat-group-by-owner-gender-result';
 
-export function groupCatsByOwnerGender(): OperatorFunction<Array<PetOwner>, CatGroupByOwnerGenderResult> {
+export const groupCatsByOwnerGender = (): OperatorFunction<Array<PetOwner>, CatGroupByOwnerGenderResult> => {
   return (source: Observable<Array<PetOwner>>) => {
     const owners$ = source.pipe(publish()) as ConnectableObservable<Array<PetOwner>>;
     const maleGroupCats$ = createCatGroupByGender(owners$, 'Male', 'Cats for Male Owners', 'blue-heading');
@@ -24,14 +24,14 @@ export function groupCatsByOwnerGender(): OperatorFunction<Array<PetOwner>, CatG
       })
     );
   };
-}
+};
 
-export function createCatGroupByGender(
+const createCatGroupByGender = (
   source: Observable<Array<PetOwner>>,
   genderType: string,
   groupName: string,
   headerClass: string
-): Observable<CatGroup> {
+): Observable<CatGroup> => {
   return source.pipe(
     mergeMap(owners => owners),
     filter(o => o && o.gender === genderType),
@@ -42,9 +42,9 @@ export function createCatGroupByGender(
       cats
     }))
   );
-}
+};
 
-export function getCats(): OperatorFunction<PetOwner, Array<Cat>> {
+export const getCats = (): OperatorFunction<PetOwner, Array<Cat>> => {
   return (source: Observable<PetOwner>) => {
     return source.pipe(
       mergeMap((owner) => owner.pets ? owner.pets : []),
@@ -54,9 +54,9 @@ export function getCats(): OperatorFunction<PetOwner, Array<Cat>> {
       map(unsortedCats => unsortedCats.sort(byNameComparer))
     );
   };
-}
+};
 
-export function byNameComparer(firstCat: Cat, secondCat: Cat) {
+export const byNameComparer = (firstCat: Cat, secondCat: Cat) => {
   const firstCatName = firstCat.name.toLowerCase();
   const secondCatName = secondCat.name.toLowerCase();
 
@@ -65,4 +65,4 @@ export function byNameComparer(firstCat: Cat, secondCat: Cat) {
   } else {
     return firstCatName > secondCatName ? 1 : -1;
   }
-}
+};
