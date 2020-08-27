@@ -1,5 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './colors.scss';
+@import './material.scss';
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -10,29 +10,11 @@ body {
 main {
     padding: 0 20px;
 }
-    
-/* Still learning how to style components withing Angular Material. I hate !important */
-.mat-expansion-panel {
-    margin-bottom: 20px!important;
-}
 
-.mat-expansion-panel-header-title,
-.mat-expansion-indicator::after {
-    color: #FFF;
-}
-
-.mat-expansion-panel-header.blue-heading {
-    background: #3f51b5!important;
-
-    &:hover {
-        background: #4e60c5!important;
-    }
-}
-
-.mat-expansion-panel-header.pink-heading {
-    background: #F55!important;
-
-    &:hover {
-        background: #F77!important;
-    }
+.error {
+    padding: 25px;
+    text-align: center;
+    border: 3px dashed $primary-red;
+    color: $primary-red;
+    font-weight: bold;
 }

@@ -1,13 +1,15 @@
-<mat-expansion-panel *ngIf="cats">
-  <mat-expansion-panel-header [ngClass]="headerClass">
-      <mat-panel-title>
-          {{title}}
-      </mat-panel-title>
-  </mat-expansion-panel-header>
-  <mat-list>
-      <div *ngFor="let cat of cats">
-          <mat-list-item> {{cat.name}} </mat-list-item>
-          <mat-divider></mat-divider>
-      </div>
-  </mat-list>
-</mat-expansion-panel>
+<div class="cat-group">
+    <mat-expansion-panel *ngIf="cats">
+        <mat-expansion-panel-header [ngClass]="headerClass">
+            <mat-panel-title>
+                {{title}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <div *ngFor="let cat of cats">
+                <mat-list-item> {{cat.name}} </mat-list-item>
+                <mat-divider></mat-divider>
+            </div>
+        </mat-list>
+    </mat-expansion-panel>
+</div>

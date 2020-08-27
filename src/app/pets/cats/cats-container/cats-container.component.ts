@@ -7,8 +7,7 @@ import { CatGroup } from '../models/cat-group';
 
 @Component({
   selector: 'agl-cats-container',
-  templateUrl: './cats-container.component.html',
-  styleUrls: ['./cats-container.component.scss']
+  templateUrl: './cats-container.component.html'
 })
 export class CatsContainerComponent implements OnInit {
   catsByGenderResult$: Observable<CatGroupByOwnerGenderResult>;

@@ -1,0 +1,24 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-expansion-panel-header-title,
+.mat-expansion-indicator::after {
+    color: $mat-expansion-panel-header-text;
+}
+
+.mat-expansion-panel-header.blue-heading {
+    background: $mat-expansion-panel-header-male;
+
+    &:hover,
+    &:focus {
+        background: $mat-expansion-panel-header-male-hover!important;
+    }
+}
+
+.mat-expansion-panel-header.pink-heading {
+    background: $mat-expansion-panel-header-female;
+
+    &:hover,
+    &:focus {
+        background: $mat-expansion-panel-header-female-hover!important;
+    }
+}

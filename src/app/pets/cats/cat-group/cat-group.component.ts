@@ -4,7 +4,8 @@ import { Cat } from '../models/cat';
 
 @Component({
   selector: 'agl-cat-group',
-  templateUrl: './cat-group.component.html'
+  templateUrl: './cat-group.component.html',
+  styleUrls: ['./cat-group.component.scss']
 })
 export class CatGroupComponent {
   @Input()
