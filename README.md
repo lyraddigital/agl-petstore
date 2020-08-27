@@ -4,4 +4,4 @@ Represents the coding test for AGL's interview process. Written by Daryl Duckman
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Firstly to get the dependencies for the application, ensure that you run `npm install` inside the application directory. Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
