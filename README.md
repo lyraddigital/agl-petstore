@@ -1,6 +1,6 @@
 # Agl Pet Store
 
-Represents the coding test for AGL's interview process. Written by Daryl Duckmanton. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+Represents the coding test for AGL's interview process. Written by Daryl Duckmanton. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.14.
 
 ## Development server
 
