@@ -14,11 +14,11 @@ export class CatsContainerComponent implements OnInit {
 
   constructor(private catsService: CatsService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.catsByGenderResult$ = this.catsService.getCatsGroupedByGender();
   }
 
-  canDisplayGroup(group: CatGroup) {
+  canDisplayGroup(group: CatGroup): boolean {
     return group && group.cats && group.cats.length > 0;
   }
 }

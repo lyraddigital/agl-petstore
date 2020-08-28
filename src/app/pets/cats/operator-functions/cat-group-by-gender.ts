@@ -15,7 +15,7 @@ export const groupCatsByOwnerGender = (): OperatorFunction<Array<PetOwner>, CatG
 
     owners$.connect();
 
-    return combineLatest(maleGroupCats$, femaleGroupCats$).pipe(
+    return combineLatest([maleGroupCats$, femaleGroupCats$]).pipe(
       map<Array<CatGroup>, CatGroupByOwnerGenderResult>(([maleGroup, femaleGroup]) => {
         return {
           groups: [maleGroup, femaleGroup],
@@ -38,7 +38,7 @@ const createCatGroupByGender = (
     getCats(),
     map<Array<Cat>, CatGroup>(cats => ({
       title: groupName,
-      headerClass: headerClass,
+      headerClass,
       cats
     }))
   );

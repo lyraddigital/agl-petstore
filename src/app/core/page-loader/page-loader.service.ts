@@ -11,11 +11,11 @@ export class PageLoaderService {
         return this.loaderStateChangeSubject.asObservable();
     }
 
-    start() {
+    start(): void {
         this.loaderStateChangeSubject.next(LoaderState.Opened);
     }
 
-    stop() {
+    stop(): void {
         this.loaderStateChangeSubject.next(LoaderState.Closed);
     }
 }
